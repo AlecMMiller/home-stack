@@ -11,3 +11,15 @@ metadata:
   annotations:
     kubernetes.io/service-account.name: vault-auth
 type: kubernetes.io/service-account-token
+---
+kind: ClusterRoleBinding
+metadata:
+  name: role-tokenreview-binding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:auth-delegator
+subjects:
+  - kind: ServiceAccount
+    name: vault-auth
+    namespace: default
