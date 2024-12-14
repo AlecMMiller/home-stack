@@ -1,7 +1,7 @@
 server:
   ingress:
     annotations:
-      cert-manager.io/cluster-issuer: cloudflare
+      cert-manager.io/issuer: cloudflare
     enabled: true
     hosts:
       - host: hv.technomancery.com
