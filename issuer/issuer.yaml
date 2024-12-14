@@ -34,7 +34,7 @@ spec:
   refreshAfter: 30s
   destination:
     create: true
-    name: cloudflare-api-token-secret
+    name: cloudflare-api-token
 ---
 apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultAuth
@@ -45,7 +45,7 @@ spec:
   method: kubernetes
   mount: cert-manager
   kubernetes:
-    role: read
+    role: role1
     serviceAccount: cert-issuer
     audiences:
       - vault
