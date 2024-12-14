@@ -27,4 +27,24 @@ spec:
   destination:
     create: true
     name: cloudflare-api-token-secret
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  namespace: cert-manager
+  name: cert-manager
+---
+apiVersion: secrets.hashicorp.com/v1beta1
+kind: VaultAuth
+metadata:
+  name: cert-issuer
+  namespace: cert-manager
+spec:
+  method: kubernetes
+  mount: cert-manager
+  kubernetes:
+    role: role1
+    serviceAccount: cert-manager
+    audiences:
+      - vault
 
