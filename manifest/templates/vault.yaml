@@ -15,11 +15,10 @@ spec:
       targetRevision: 0.*.*
       helm:
         valueFiles:
-        - $values/values.yaml
+        - $values/vault/values.yaml
     - repoURL: https://github.com/AlecMMiller/home-stack
       targetRevision: HEAD
       ref: values
-      path: vault
   project: default
   syncPolicy:
     automated: {}
