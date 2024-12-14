@@ -12,7 +12,7 @@ spec:
     - dns01:
         cloudflare:
           apiTokenSecretRef:
-            name: cloudflare-api-token-secret
+            name: cloudflare-api-token
             key: api-token
 ---
 apiVersion: secrets.hashicorp.com/v1beta1
@@ -20,7 +20,7 @@ kind: VaultStaticSecret
 metadata:
   name: cloudflare-api-token
 spec:
-  vaultAuthRef: vault-auth
+  vaultAuthRef: cloudflare-api-token
   mount: secret
   type: kv-v2
   path:  cert-manager/cloudflare-api-token
@@ -31,14 +31,14 @@ spec:
 apiVersion: secrets.hashicorp.com/v1beta1
 kind: VaultAuth
 metadata:
-  name: cert-issuer
+  name: cloudflare-api-token
   namespace: cert-manager
 spec:
   method: kubernetes
   mount: cert-manager
   kubernetes:
     role: role1
-    serviceAccount: cert-manager
+    serviceAccount: cert-issuer
     audiences:
       - vault
 
