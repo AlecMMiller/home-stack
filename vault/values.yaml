@@ -1,7 +1,7 @@
 server:
   ingress:
     annotations:
-      kubernetes.io/tls-acme: "tru
+      kubernetes.io/tls-acme: "true"
     enabled: true
     hosts:
       - host: hv.technomancery.com
