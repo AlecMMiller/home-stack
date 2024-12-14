@@ -43,7 +43,7 @@ spec:
   method: kubernetes
   mount: cert-manager
   kubernetes:
-    role: role1
+    role: read
     serviceAccount: cert-issuer
     audiences:
       - vault
