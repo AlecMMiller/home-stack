@@ -10,7 +10,7 @@ spec:
     namespace: vault
     server: {{ .Values.spec.destination.server }}
   ignoreDifferences:
-    - group: apps
+    - group: "*"
       kind: MutatingWebhookConfiguration
       jsonPointers:
         - /webhooks/0/clientConfig/caBundle
