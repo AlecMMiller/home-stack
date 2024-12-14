@@ -1,6 +1,9 @@
 server:
   ingress:
     enabled: true
+  hosts:
+    - host: hv.technomancery.com
+      paths: []
 
 ui:
   enabled: true
