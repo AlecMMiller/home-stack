@@ -27,3 +27,22 @@ spec:
   project: default
   syncPolicy:
     automated: {}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name:  vault-account
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: vault
+    server: {{ .Values.spec.destination.server }}
+  source:
+    path: vault-other
+    repoURL: https://github.com/AlecMMiller/home-stack
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated: {}
