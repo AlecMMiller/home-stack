@@ -16,3 +16,22 @@ spec:
   project: default
   syncPolicy:
     automated: {}
+--
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name:  cert-issuer
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: cert-manager
+    server: {{ .Values.spec.destination.server }}
+  source:
+    path: issuer
+    repoURL: https://github.com/AlecMMiller/home-stack
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated: {}
