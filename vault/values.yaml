@@ -6,6 +6,10 @@ server:
     hosts:
       - host: hv.technomancery.com
         paths: []
+    tls: 
+      - secretName: vault-tls
+        hosts:
+        - hv.technomancery.com
 
 ui:
   enabled: true
