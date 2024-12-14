@@ -1,2 +1,11 @@
+server:
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/tls-acme: true
+    hosts:
+      - host: hv.technomancery.com
+        paths: []
+
 ui:
   enabled: true
