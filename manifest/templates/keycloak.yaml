@@ -21,4 +21,6 @@ spec:
       ref: values
   project: default
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
     automated: {}
