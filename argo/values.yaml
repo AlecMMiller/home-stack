@@ -1,6 +1,7 @@
 global:
   domain: argo.technomancery.com
 server:
+  insecure: true
   ingress:
     enabled: true
     annotations:
