@@ -1,4 +1,5 @@
-domain: argo.technomancery.com
+global:
+  domain: argo.technomancery.com
 server:
   ingress:
     enabled: true
