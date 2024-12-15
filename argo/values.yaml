@@ -3,3 +3,10 @@ global:
 server:
   ingress:
     enabled: true
+  annotations:
+      cert-manager.io/cluster-issuer: cloudflare
+  tls: true
+crds:
+  install: true
+  keep: true
+  annotations: {}
