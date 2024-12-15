@@ -37,7 +37,7 @@ spec:
     namespace: keycloak
     server: {{ .Values.spec.destination.server }}
   source:
-    path: keycloak-secrets
+    path: keycloak-secret
     repoURL: https://github.com/AlecMMiller/home-stack
     targetRevision: HEAD
   project: default
