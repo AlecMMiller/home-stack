@@ -1,7 +1,6 @@
 global:
   domain: argo.technomancery.com
 server:
-  insecure: true
   ingress:
     enabled: true
     annotations:
@@ -11,3 +10,6 @@ crds:
   install: true
   keep: true
   annotations: {}
+config:
+  params:
+    server.insecure = true;
