@@ -1,0 +1,4 @@
+domain: argo.technomancery.com
+server:
+  ingress:
+    enabled: true
