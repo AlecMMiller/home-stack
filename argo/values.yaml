@@ -3,9 +3,9 @@ global:
 server:
   ingress:
     enabled: true
-  annotations:
+    annotations:
       cert-manager.io/cluster-issuer: cloudflare
-  tls: true
+    tls: true
 crds:
   install: true
   keep: true
