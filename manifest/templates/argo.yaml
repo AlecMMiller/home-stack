@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: vault
+    server: {{ .Values.spec.destination.server }}
+  sources:
+    - chart: argocd
+      repoURL: https://argoproj.github.io/argo-helm
+      targetRevision: 7.*.*
+      helm:
+        valueFiles:
+        - $values/argo/values.yaml
+    - repoURL: https://github.com/AlecMMiller/home-stack
+      targetRevision: HEAD
+      ref: values
+  project: default
+  syncPolicy:
+    automated: {}
