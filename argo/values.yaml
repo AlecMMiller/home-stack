@@ -12,4 +12,4 @@ crds:
   annotations: {}
 config:
   params:
-    server.insecure = true;
+    server.insecure: true
