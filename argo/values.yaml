@@ -10,6 +10,6 @@ crds:
   install: true
   keep: true
   annotations: {}
-config:
+configs:
   params:
     server.insecure: true
