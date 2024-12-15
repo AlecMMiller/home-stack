@@ -1,0 +1,6 @@
+ingress:
+  enabled: true
+  hostname: keycloak.technomancery.com
+  annotations:
+    cert-manager.io/cluster-issuer: cloudflare
+  tls: true
