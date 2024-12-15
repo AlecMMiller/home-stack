@@ -10,7 +10,7 @@ spec:
     namespace: argocd
     server: {{ .Values.spec.destination.server }}
   sources:
-    - chart: argocd
+    - chart: argo-cd
       repoURL: https://argoproj.github.io/argo-helm
       targetRevision: 7.*.*
       helm:
