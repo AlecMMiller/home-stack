@@ -24,3 +24,22 @@ spec:
     syncOptions:
       - CreateNamespace=true
     automated: {}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name:  keycloak-secrets
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: keycloak
+    server: {{ .Values.spec.destination.server }}
+  source:
+    path: keycloak-secrets
+    repoURL: https://github.com/AlecMMiller/home-stack
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated: {}

@@ -1,6 +1,16 @@
+auth:
+  existingSecret: "keycloak"
+  passwordSecretKey: "adminPassword"
+
 ingress:
   enabled: true
   hostname: keycloak.technomancery.com
   annotations:
     cert-manager.io/cluster-issuer: cloudflare
   tls: true
+
+postgresql:
+  auth:
+    existingSecret: "keycloak"
+    secretKeys:
+      userPasswordKey: "postgresqlPassword"
