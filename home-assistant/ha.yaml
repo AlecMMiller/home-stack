@@ -45,6 +45,6 @@ spec:
         pathType: Prefix
         path: /
   tls:
-   - hosts:
-      - ha.technomancery.com
-      secretName: home-assistant-tls
+  - hosts:
+    - ha.technomancery.com
+    secretName: home-assistant-tls
