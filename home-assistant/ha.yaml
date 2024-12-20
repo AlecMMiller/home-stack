@@ -36,4 +36,5 @@ spec:
       - backend:
           serviceName: home-assistant
           servicePort: 80
+        pathType: Prefix
         path: /
