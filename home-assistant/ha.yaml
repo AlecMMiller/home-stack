@@ -8,7 +8,7 @@ metadata:
 spec:
   ports:
   - name: app
-    port: 80
+    port: 443
     protocol: TCP
     targetPort: 8123
   clusterIP: None
@@ -32,6 +32,7 @@ metadata:
   name: home-assistant
   annotations:
     cert-manager.io/cluster-issuer: cloudflare
+    traefik.ingress.kubernetes.io/secure-served: "true"
 spec:
   rules:
   - host: ha.technomancery.com
@@ -41,7 +42,7 @@ spec:
           service:
             name: home-assistant
             port: 
-              number: 80
+              number: 443
         pathType: Prefix
         path: /
   tls:
