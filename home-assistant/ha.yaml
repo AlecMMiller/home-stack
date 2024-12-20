@@ -44,3 +44,7 @@ spec:
               number: 80
         pathType: Prefix
         path: /
+  tls:
+   - hosts:
+      - ha.technomancery.com
+      secretName: home-assistant-tls
